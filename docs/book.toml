@@ -1,0 +1,17 @@
+[book]
+title = "The Average Guy — Project Documentation"
+authors = ["Project Delivery Team"]
+language = "en"
+src = "src"
+
+[build]
+build-dir = "book"
+
+[output.html]
+default-theme = "navy"
+preferred-dark-theme = "navy"
+git-repository-url = ""
+edit-url-template = ""
+
+[output.html.search]
+enable = true
