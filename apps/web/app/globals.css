@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fdfbf7;
+  --foreground: #1c1f1d;
+  --manifesto-bg: #234537;
+  --manifesto-text: #f5efe4;
+  --manifesto-eyebrow: #d9d0c1;
+  --manifesto-pill-bg: #ece5d8;
+  --manifesto-accent: #b86034;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-manifesto-bg: var(--manifesto-bg);
+  --color-manifesto-text: var(--manifesto-text);
+  --color-manifesto-eyebrow: var(--manifesto-eyebrow);
+  --color-manifesto-pill-bg: var(--manifesto-pill-bg);
+  --color-manifesto-accent: var(--manifesto-accent);
+  --font-sans: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+  --font-serif: var(--font-cormorant), "Times New Roman", serif;
+  --font-newsreader: var(--font-newsreader), Georgia, serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* High-contrast luxury editorial typography */
+.font-editorial {
+  font-family: var(--font-cormorant), var(--font-newsreader), "Times New Roman", Georgia, serif;
+  font-feature-settings: "cv01", "cv02", "dlig", "liga", "calt";
+  font-variant-numeric: oldstyle-nums;
+}
+
+.font-display-serif {
+  font-family: var(--font-cormorant), "Times New Roman", serif;
+}
+
+/* Subdued entrance animation */
+@keyframes manifestoFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-manifesto-reveal {
+  animation: manifestoFadeIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-manifesto-reveal {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

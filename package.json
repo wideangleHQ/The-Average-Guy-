@@ -1,0 +1,7 @@
+{
+  "name": "the-average-guy",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ]
+}
