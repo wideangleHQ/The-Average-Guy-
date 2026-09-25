@@ -37,8 +37,8 @@ class EnvironmentVariables {
   @IsString()
   DIRECT_URL?: string;
 
-  // Not yet consumed (Media/Auth modules land in later phases) but validated
-  // for type-safety as soon as they're set, so a typo surfaces immediately.
+  // Not yet consumed (the Media module lands in a later phase) but validated
+  // for type-safety as soon as it's set, so a typo surfaces immediately.
   @IsOptional()
   @IsString()
   SUPABASE_URL?: string;
@@ -55,9 +55,15 @@ class EnvironmentVariables {
   @IsString()
   SUPABASE_STORAGE_BUCKET?: string;
 
-  @IsOptional()
   @IsString()
-  JWT_SECRET?: string;
+  JWT_SECRET!: string;
+
+  // Seconds, not a duration string (e.g. "1d") - keeps the type a plain
+  // number so it satisfies @nestjs/jwt's signOptions.expiresIn without a cast.
+  @IsOptional()
+  @IsInt()
+  @Min(60)
+  JWT_EXPIRES_IN_SECONDS: number = 86400;
 }
 
 export function validateEnv(config: Record<string, unknown>) {
