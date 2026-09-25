@@ -16,7 +16,7 @@ flowchart LR
 | 1. Frontend Environment | Next.js setup, architecture, tooling, env config | **Done** |
 | 2. UI/UX System | Design tokens, typography, colours, base components | Not started |
 | 3. Frontend Pages | Home, Menu, What's On, Regulars, Community, Products, Visit | Not started |
-| 4. Backend | NestJS, PostgreSQL, Prisma, Auth, CMS, APIs | Not started |
+| 4. Backend | NestJS, PostgreSQL, Prisma, Auth, CMS, APIs | In progress — Phase 1 (project setup) done, scoped to Communities + Events |
 | 5. Integration | Frontend ↔ API, membership, community uploads, events, products | Not started |
 | 6. Experience Layer | Dedicated animations, moving creature, micro-interactions, perf | Not started |
 

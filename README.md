@@ -16,7 +16,7 @@ see [Development Workflow](docs/src/development/workflow.md) for the full phase 
 | Layer | Technology | Status |
 |---|---|---|
 | Frontend | Next.js, React, TypeScript, Tailwind CSS | Implemented (`apps/web`) |
-| Backend | NestJS, REST API | Planned (`apps/api` — placeholder only) |
+| Backend | NestJS, REST API | In progress (`apps/api` — Phase 1 project setup done) |
 | Database | PostgreSQL (via Prisma) | Planned |
 | Platform | Supabase (DB + Storage) | Planned |
 | Deployment | Vercel (frontend), Railway (backend) | Planned |
@@ -69,9 +69,16 @@ variable does.
 
 ### Run the API (`apps/api`)
 
-Not yet implemented — `apps/api` is currently an empty placeholder for the future
-NestJS backend. There is nothing to run here yet. See
+Phase 1 (project setup, config validation, Prisma connection, health check) is done.
+Auth, Communities, Events, Media and Audit are not implemented yet. See
 [Backend Architecture](docs/src/backend/architecture.md) for the planned design.
+
+```bash
+cp apps/api/.env.example apps/api/.env   # fill in DATABASE_URL etc. first
+npm run start:dev --workspace=api         # dev server → http://localhost:4000
+npm run build --workspace=api             # production build
+npm run lint --workspace=api              # ESLint
+```
 
 ### Run the Documentation
 
