@@ -1,7 +1,10 @@
 # Backend Architecture
 
-**Status: not yet initialized.** `apps/api` is an empty placeholder. Everything on
-this page describes the *planned* architecture — do not treat it as implemented.
+**Status: Phase 1 (project setup) done.** `apps/api` is a bare NestJS app with
+env validation, a Prisma-backed `DatabaseModule`, and a `GET /api/v1/health`
+check — no Auth, Communities, Events, Media, or Audit modules yet. Everything else
+on this page describes the *planned* architecture — do not treat it as implemented
+until its own phase lands.
 
 ```mermaid
 flowchart TD
@@ -35,7 +38,7 @@ Admin/CMS — see [Modules](modules.md).
 
 ## When This Gets Built
 
-Backend implementation is a distinct phase after the frontend environment and the
-SRS/design system are finalized — see [Development Workflow](../development/workflow.md).
-Do not initialize NestJS, Prisma, or database configuration ahead of that phase
-without explicit instruction.
+Backend implementation started ahead of the frontend pages/UI phases on explicit
+instruction — scoped initially to Communities + Events only (Menu, Products, and
+Community Wall remain future work; see [Modules](modules.md)). See
+[Development Workflow](../development/workflow.md) for the phase plan.
